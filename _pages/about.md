@@ -6,7 +6,7 @@ subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
 
 profile:
   align: right
-  image: IMG_5314.png
+  image: IMG_4798.png
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>480 Hutchison Hall</p>
