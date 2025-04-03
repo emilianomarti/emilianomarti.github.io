@@ -27,8 +27,5 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
-
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
-
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+I am a PhD candidate in the Ecology, Evolution, Genetics and Genomics (E2G2) program at the University of Rochester, co-advised by [Dr. Amanda Larracuente](https://blogs.rochester.edu/larracuente/) and [Dr. Daven Presgraves](https://blogs.rochester.edu/PresgravesLab/). My research focuses on the evolutionary consequences of intragenomic conflicts, particularly how [selfish genetic elements](https://www.cell.com/trends/ecology-evolution/abstract/0169-5347(88)90105-X) (SGEs) can drive the rapid evolution of essential functions, contributing to the origin of hybrid incompatibilities. I use a combination of genetic, genomic, and molecular approaches in Drosophila to understand these fundamental evolutionary processes.
+I got my masters at the São Paulo State University (UNESP) in Brazil, advised by [Dr. Diogo C. Cabral-De-Mello](https://scholar.google.com.br/citations?user=PQUEjoQAAAAJ), studying the evolution of repetitive DNA in Schistocerca grasshoppers. Previously, I got a BS. in Genetics at the National University of Misiones (UNaM) in Argentina.
