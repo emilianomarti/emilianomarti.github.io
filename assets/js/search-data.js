@@ -449,7 +449,7 @@ ninja.data = [{
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
           section: "News",},{id: "news-amanda-larracuente-and-i-wrote-a-short-commentary-in-trends-in-genetics-highlighting-recent-work-lead-by-dr-peiwei-chen-and-colleagues-their-study-uncovers-trailblazer-a-fast-evolving-transcription-factor-that-plays-a-key-role-in-the-suppression-of-selfish-genetic-elements-in-drosophila-read-the-article-here",
-          title: 'Amanda Larracuente and I wrote a short commentary in Trends in Genetics, highlighting...',
+          title: 'Amanda Larracuente and I wrote a short commentary in Trends in Genetics highlighting...',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
