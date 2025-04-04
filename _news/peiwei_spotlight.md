@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Amanda Larracuente and I wrote a short commentary in Trends in Genetics, highlighting recent work lead by Dr. Peiwei Chen and colleagues. Their study uncovers Trailblazer, a fast-evolving transcription factor that plays a key role in the suppression of selfish genetic elements in Drosophila. Read the article [here](https://authors.elsevier.com/c/1ktQOcQbJF8ya).
+Amanda Larracuente and I wrote a short commentary in Trends in Genetics highlighting recent work lead by Dr. Peiwei Chen and colleagues. Their study uncovers Trailblazer, a fast-evolving transcription factor that plays a key role in the suppression of selfish genetic elements in Drosophila. Read the article [here](https://authors.elsevier.com/c/1ktQOcQbJF8ya).
