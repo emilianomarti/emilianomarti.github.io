@@ -195,6 +195,9 @@ exclude:
   - vendor
   - _pages/repositories.md
   - _includes/repository/
+  - announcement_1.md
+  - announcement_2.md
+  - announcement_3.md
 keep_files:
   - CNAME
   - .nojekyll
