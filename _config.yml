@@ -200,6 +200,7 @@ exclude:
   - announcement_3.md
   - _pages/profiles.md
   - _pages/teaching.md
+  - _pages/projects.md
 keep_files:
   - CNAME
   - .nojekyll
