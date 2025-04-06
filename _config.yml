@@ -195,9 +195,9 @@ exclude:
   - vendor
   - _pages/repositories.md
   - _includes/repository/
-  - announcement_1.md
-  - announcement_2.md
-  - announcement_3.md
+  - _news/announcement_1.md
+  - _news/announcement_2.md
+  - _news/announcement_3.md
   - _pages/profiles.md
   - _pages/teaching.md
   - _pages/projects.md
