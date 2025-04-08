@@ -7,49 +7,43 @@ layout: default
     <h1 class="post-title">
       {{ page.title }}
       {% if page.cv_pdf %}
-        <a
-          {% if page.cv_pdf contains '://' %}
-            href="{{ page.cv_pdf }}"
-          {% else %}
-            href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url }}"
-          {% endif %}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="float-right"
-          title="Download PDF" >
-          <i class="fa-solid fa-download"></i> </a>
+        {% assign pdf_url = page.cv_pdf %}
+        {% unless pdf_url contains '://' %}
+          {% assign pdf_url = pdf_url | prepend: 'assets/pdf/' | relative_url %}
+        {% endunless %}
+        <a href="{{ pdf_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm float-right" title="Download CV as PDF">
+          <i class="fa-solid fa-download"></i> Download PDF
+        </a>
       {% endif %}
     </h1>
     {% if page.description %}
       <p class="post-description">{{ page.description }}</p>
     {% endif %}
+
+    <p style="margin-top: 1rem;">You can view my CV embedded below, or download the PDF version using the button above.</p>
+
   </header>
 
   <article>
     {% if page.cv_pdf %}
-      {% comment %} Determine the correct PDF URL {% endcomment %}
-      {% assign pdf_url = page.cv_pdf %}
-      {% unless pdf_url contains '://' %}
-        {% assign pdf_url = pdf_url | prepend: 'assets/pdf/' | relative_url %}
-      {% endunless %}
 
-      {% comment %} Embed the PDF using an <embed> or <iframe> tag {% endcomment %}
-      <div class="cv-pdf-container" style="position: relative; width: 100%; height: 80vh; overflow: hidden;">
-         <embed src="{{ pdf_url }}" type="application/pdf" width="100%" height="100%" />
-         <p style="text-align: center; margin-top: 20px;">
-           Your browser doesn't support embedded PDFs. You can
-           <a href="{{ pdf_url }}" target="_blank" rel="noopener noreferrer">download the PDF file directly</a>.
-         </p>
+      <div class="cv-pdf-wrapper" style="margin-top: 2rem; margin-bottom: 2rem;">
+         <div class="cv-pdf-container">
+           <embed src="{{ pdf_url }}" type="application/pdf" width="100%" height="100%" />
+           <p class="pdf-fallback">
+             Your browser doesn't support embedded PDFs. You can
+             <a href="{{ pdf_url }}" target="_blank" rel="noopener noreferrer">download the PDF file directly</a>.
+           </p>
+         </div>
       </div>
 
-      {% comment %} Alternatively, you can use an iframe:
-      <iframe src="{{ pdf_url }}" style="width: 100%; height: 80vh; border: none;">
-          <p>Your browser does not support iframes. You can <a href="{{ pdf_url }}" target="_blank" rel="noopener noreferrer">download the PDF file directly</a>.</p>
-      </iframe>
-      {% endcomment %}
+       {% if page.last_updated %}
+        <p class="text-muted text-center" style="margin-top: 1rem;"><small>CV Last Updated: {{ page.last_updated | date: "%B %d, %Y" }}</small></p>
+        {% endif %}
+
 
     {% else %}
-       <p><strong>Configuration Error:</strong> The 'cv_pdf' variable is not set in the front matter of this page. Please specify the path to your CV PDF file (e.g., `cv_pdf: my_cv.pdf`).</p>
+       <p class="alert alert-danger"><strong>Configuration Error:</strong> The 'cv_pdf' variable is not set in the front matter of this page. Please specify the path to your CV PDF file (e.g., `cv_pdf: my_cv.pdf`).</p>
     {% endif %}
   </article>
 
