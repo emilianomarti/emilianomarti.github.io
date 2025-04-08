@@ -1,57 +1,71 @@
-// In _sass/_custom.scss
+// _sass/_custom.scss
+// Add custom styles here. Ensure @import "custom"; exists in assets/css/main.scss
 
-.cv-pdf-wrapper {
-  // Adds some breathing room around the container
-  padding: 0; // Adjust if needed, e.g., 1rem if you want space outside the shadow/border
-}
+// --- CV Page PDF Embed Styling (Centralized Control) ---
 
+// Styles for the container div holding the PDF embed
+// Targets the <div class="cv-pdf-container"> in _layouts/cv.liquid
 .cv-pdf-container {
-  position: relative; // Needed for fallback positioning if enhanced later
-  width: 100%;
-  height: 80vh; // Default height - adjust as needed (e.g., 1000px)
-  overflow: hidden; // Hide anything overflowing the container
 
-  // Aesthetic styling:
-  border: 1px solid #e0e0e0; // Subtle border (adjust color to match theme)
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
-  background-color: #f8f9fa; // Light background for behind the PDF viewer (helps if PDF fails)
+  // ** Essential Layout & Structure **
+  // These rules define the size and basic behavior of the container.
+  display: block;         // Ensure block-level behavior.
+  width: 100%;            // Make container use full available width.
+  position: relative;     // Needed for potential internal absolute positioning (e.g., advanced fallback).
+  overflow: hidden;       // Hide anything spilling outside the defined height.
+  margin-top: 1.5rem;     // Space above the container. Adjust as needed.
+  margin-bottom: 1.5rem;  // Space below the container. Adjust as needed.
 
-  // Ensure embed fills the container
-  embed {
-    display: block; // Removes potential extra space below
-    width: 100%;
-    height: 100%;
-  }
+  // *** SET PDF VIEWER HEIGHT HERE ***
+  // Use 'vh' (viewport height) or 'px' (pixels). '80vh' is 80% of window height.
+  height: 80vh;           // <--- ADJUST CONTAINER HEIGHT
+
+  // ** Optional Aesthetic Styling **
+  // Uncomment and modify these lines if you want a visual frame.
+  // border: 1px solid #e0e0e0;           // Adds a subtle border outline.
+  // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Adds a soft drop shadow for depth.
+  // background-color: #f8f9fa;        // Adds a light background (visible if PDF loads slowly/fails).
 }
 
-// Style the fallback text
+// Styles for the <embed> element *inside* the .cv-pdf-container
+// Ensures the PDF viewer itself fills the container defined above.
+.cv-pdf-container embed {
+  display: block;   // Consistent block behavior.
+  width: 100%;    // Fill the container's width.
+  height: 100%;   // Fill the container's height (inherits the '80vh' from the parent).
+}
+
+// Styles for the fallback paragraph <p class="pdf-fallback">
 .pdf-fallback {
-  padding: 2rem;
+  // Simple styling: centered text, padding, muted color.
+  // This might briefly appear below the embed area while loading.
+  padding: 1rem 0;
   text-align: center;
-  color: #6c757d; // Muted text color
+  color: #6c757d; // Standard Bootstrap muted color
+
+  // Set 'display: none;' if you absolutely want to hide it by default,
+  // but be aware it won't show even if embedding truly fails without JS checks.
+  // display: none;
 }
 
-// Responsive adjustments
-@media (max-width: 768px) {
+
+// --- Responsive Adjustments ---
+// Adjust container height for different screen sizes using media queries.
+
+@media (max-width: 992px) { // Screens narrower than 992px (typical tablets)
   .cv-pdf-container {
-    height: 70vh; // Reduce height slightly on smaller screens
-  }
-  // Make download button less likely to collide with title on mobile
-  .post-header h1 .btn {
-    // float: none; // Remove float if needed
-    // display: block; // Make it full width below title if needed
-    // margin-top: 0.5rem; // Add space if block
+    height: 75vh; // Make it slightly shorter on tablets
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) { // Screens narrower than 768px (typical phones)
   .cv-pdf-container {
-    height: 65vh; // Further reduce height on very small screens
-    border: none; // Maybe remove border/shadow on smallest screens
-    box-shadow: none;
+    height: 70vh; // Make it shorter still on phones
   }
+  // Optional: Adjust download button style/position for mobile if needed
+  // .post-header h1 .btn.float-right { ... }
 }
 
-// Improve Download Button Styling (Leveraging Bootstrap classes added in HTML)
-// No extra CSS needed if using 'btn btn-primary btn-sm' as above,
-// but you could customize '.btn-primary' further here if desired.
+// --- End CV Page PDF Embed Styling ---
+
+// Add any other custom site-wide CSS rules below.

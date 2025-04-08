@@ -1,0 +1,57 @@
+// In _sass/_custom.scss
+
+.cv-pdf-wrapper {
+  // Adds some breathing room around the container
+  padding: 0; // Adjust if needed, e.g., 1rem if you want space outside the shadow/border
+}
+
+.cv-pdf-container {
+  position: relative; // Needed for fallback positioning if enhanced later
+  width: 100%;
+  height: 80vh; // Default height - adjust as needed (e.g., 1000px)
+  overflow: hidden; // Hide anything overflowing the container
+
+  // Aesthetic styling:
+  border: 1px solid #e0e0e0; // Subtle border (adjust color to match theme)
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+  background-color: #f8f9fa; // Light background for behind the PDF viewer (helps if PDF fails)
+
+  // Ensure embed fills the container
+  embed {
+    display: block; // Removes potential extra space below
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Style the fallback text
+.pdf-fallback {
+  padding: 2rem;
+  text-align: center;
+  color: #6c757d; // Muted text color
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .cv-pdf-container {
+    height: 70vh; // Reduce height slightly on smaller screens
+  }
+  // Make download button less likely to collide with title on mobile
+  .post-header h1 .btn {
+    // float: none; // Remove float if needed
+    // display: block; // Make it full width below title if needed
+    // margin-top: 0.5rem; // Add space if block
+  }
+}
+
+@media (max-width: 576px) {
+  .cv-pdf-container {
+    height: 65vh; // Further reduce height on very small screens
+    border: none; // Maybe remove border/shadow on smallest screens
+    box-shadow: none;
+  }
+}
+
+// Improve Download Button Styling (Leveraging Bootstrap classes added in HTML)
+// No extra CSS needed if using 'btn btn-primary btn-sm' as above,
+// but you could customize '.btn-primary' further here if desired.
