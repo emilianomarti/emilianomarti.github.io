@@ -3,73 +3,62 @@ layout: default
 ---
 
 <div class="post">
-
   <header class="post-header">
     <h1 class="post-title">
       {{ page.title }}
-
-      {% comment %} --- Checks if 'cv_pdf' is defined in the page's front matter --- {% endcomment %}
       {% if page.cv_pdf %}
-        {% comment %} --- Prepare the PDF URL --- {% endcomment %}
-        {% assign pdf_url = page.cv_pdf %}
-        {% comment %} If 'cv_pdf' doesn't contain '://' (isn't a full URL), assume it's a local file. {% endcomment %}
-        {% unless pdf_url contains '://' %}
-          {% comment %} Prepend the standard PDF assets path and make it a relative URL. {% endcomment %}
-          {% assign pdf_url = pdf_url | prepend: 'assets/pdf/' | relative_url %}
-        {% endunless %}
-        <a href="{{ pdf_url }}"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="btn btn-primary btn-sm float-right"
-           title="Download CV as PDF">
-          <i class="fa-solid fa-download"></i>
-          Download PDF
-        </a>
+        <a
+          {% if page.cv_pdf contains '://' %}
+            href="{{ page.cv_pdf }}"
+          {% else %}
+            href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url }}"
+          {% endif %}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="float-right"
+          title="Download PDF" >
+          <i class="fa-solid fa-download"></i> </a>
       {% endif %}
-      {% comment %} --- End Download Button Logic --- {% endcomment %}
-
     </h1>
-    {% comment %} --- Checks if 'description' is defined in the page's front matter --- {% endcomment %}
     {% if page.description %}
       <p class="post-description">{{ page.description }}</p>
     {% endif %}
   </header>
 
   <article>
-    {% comment %} --- Check if 'cv_pdf' is defined before trying to embed --- {% endcomment %}
     {% if page.cv_pdf %}
+      {% comment %} Determine the correct PDF URL {% endcomment %}
+      {% assign pdf_url = page.cv_pdf %}
+      {% unless pdf_url contains '://' %}
+        {% assign pdf_url = pdf_url | prepend: 'assets/pdf/' | relative_url %}
+      {% endunless %}
 
-      {% comment %} --- PDF Embedding Section --- {% endcomment %}
-      {% comment %} This div is the container for the PDF. {% endcomment %}
-      {% comment %} Class "cv-pdf-container" is used to apply ALL styles from CSS. {% endcomment %}
-      {% comment %} NO inline styles are used here. Control height, margins, border, etc., in _sass/_custom.scss {% endcomment %}
-      <div class="cv-pdf-container">
-
-        {% comment %} The <embed> tag to display the PDF. {% endcomment %}
-        {% comment %} Width and height are controlled via CSS rule '.cv-pdf-container embed' {% endcomment %}
-        <embed src="{{ pdf_url }}" type="application/pdf" />
-
-        {% comment %} Fallback paragraph if embedding fails. {% endcomment %}
-        {% comment %} Class "pdf-fallback" allows styling via CSS. {% endcomment %}
-        <p class="pdf-fallback">
-          Your browser doesn't support embedded PDFs. You can
-          <a href="{{ pdf_url }}" target="_blank" rel="noopener noreferrer">download the PDF file directly</a>.
-        </p>
-
+      {% comment %} Embed the PDF using an <embed> or <iframe> tag {% endcomment %}
+      <div class="cv-pdf-container" style="position: relative; width: 100%; height: 80vh; overflow: hidden;">
+         <embed src="{{ pdf_url }}" type="application/pdf" width="100%" height="100%" />
+         <p style="text-align: center; margin-top: 20px;">
+           Your browser doesn't support embedded PDFs. You can
+           <a href="{{ pdf_url }}" target="_blank" rel="noopener noreferrer">download the PDF file directly</a>.
+         </p>
       </div>
-      {% comment %} --- End PDF Embedding Section --- {% endcomment %}
+
+      {% comment %} Alternatively, you can use an iframe:
+      <iframe src="{{ pdf_url }}" style="width: 100%; height: 80vh; border: none;">
+          <p>Your browser does not support iframes. You can <a href="{{ pdf_url }}" target="_blank" rel="noopener noreferrer">download the PDF file directly</a>.</p>
+      </iframe>
+      {% endcomment %}
 
     {% else %}
-      <p class="alert alert-danger">
-        <strong>Configuration Error:</strong> 'cv_pdf' variable not set in front matter.
-      </p>
+       <p><strong>Configuration Error:</strong> The 'cv_pdf' variable is not set in the front matter of this page. Please specify the path to your CV PDF file (e.g., `cv_pdf: my_cv.pdf`).</p>
     {% endif %}
   </article>
 
+  {% comment %} --- Checks if 'last_updated' is defined in the page's front matter --- {% endcomment %}
   {% if page.last_updated %}
     <p class="text-muted text-center" style="margin-top: 2rem; margin-bottom: 1rem;">
       <small>CV Last Updated: {{ page.last_updated | date: "%B %d, %Y" }}</small>
     </p>
   {% endif %}
+  {% comment %} --- End Last Updated Date --- {% endcomment %}
 
 </div>
