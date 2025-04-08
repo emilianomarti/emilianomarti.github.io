@@ -28,7 +28,7 @@ layout: default
     {% if page.cv_pdf %}
 
       <div class="cv-pdf-wrapper" style="margin-top: 2rem; margin-bottom: 2rem;">
-         <div class="cv-pdf-container">
+         <div class="cv-pdf-container" style="position: relative; width: 100%; height: 80vh; overflow: hidden;">
            <embed src="{{ pdf_url }}" type="application/pdf" width="100%" height="100%" />
            <p class="pdf-fallback">
              Your browser doesn't support embedded PDFs. You can
