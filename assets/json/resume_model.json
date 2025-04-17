@@ -1,24 +1,24 @@
 {
   "basics": {
-    "name": "Emiliano Martí",
-    "label": "",
+    "name": "Albert Einstein",
+    "label": "Scientist",
     "image": "",
-    "email": "emarti@ur.rochester.edu",
-    "phone": "",
-    "url": "https://emilianomarti.github.io/",
-    "summary": "I am a PhD student in the Department of Biology at the University of Rochester. I am interested in genetic conflicts, sex chromosomes, and speciation.",
+    "email": "albert@einstein.de",
+    "phone": "(912) 123-4567",
+    "url": "https://alshedivat.github.io/al-folio/",
+    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
     "location": {
-      "address": "480 Hutchison Hall, University of Rochester",
-      "postalCode": "14627",
-      "city": "Rochester",
+      "address": "2712 Broadway St",
+      "postalCode": "CA 94115",
+      "city": "San Francisco",
       "countryCode": "US",
-      "region": "New York"
+      "region": "California"
     },
     "profiles": [
       {
-        "network": "",
-        "username": "",
-        "url": ""
+        "network": "Twitter",
+        "username": "AlbertEinstein",
+        "url": "https://twitter.com/AlbertEinstein"
       }
     ]
   },
