@@ -36,20 +36,20 @@ layout: default
         {% assign pdf_url = pdf_url | prepend: 'assets/pdf/' | relative_url %}
       {% endunless %}
 
-      {% comment %} Embed the PDF using an <embed> or <iframe> tag {% endcomment %}
-      <div class="cv-pdf-container" style="position: relative; width: 100%; height: 80vh;">
-         <embed src="{{ pdf_url }}" type="application/pdf" width="100%" height="100%" />
-         <p style="text-align: center; margin-top: 20px;">
-           Your browser doesn't support embedded PDFs. You can
-           <a href="{{ pdf_url }}" target="_blank" rel="noopener noreferrer">download the PDF file directly</a>.
-         </p>
-      </div>
+      {% comment %} Commented out the embed version
+        <div class="cv-pdf-container" style="position: relative; width: 100%; height: 80vh; overflow: hidden;">
+          <embed src="{{ pdf_url }}" type="application/pdf" width="100%" height="100%" />
+          <p style="text-align: center; margin-top: 20px;">
+            Your browser doesn't support embedded PDFs. You can
+            <a href="{{ pdf_url }}" target="_blank" rel="noopener noreferrer">download the PDF file directly</a>.
+          </p>
+        </div>
+        {% endcomment %}
 
-      {% comment %} Alternatively, you can use an iframe:
-      <iframe src="{{ pdf_url }}" style="width: 100%; height: 80vh; border: none;">
-          <p>Your browser does not support iframes. You can <a href="{{ pdf_url }}" target="_blank" rel="noopener noreferrer">download the PDF file directly</a>.</p>
-      </iframe>
-      {% endcomment %}
+        {% comment %} Using the iframe alternative: {% endcomment %}
+        <iframe src="{{ pdf_url }}" style="width: 100%; height: 80vh; border: none; margin-top: 1.5rem; margin-bottom: 1.5rem;">
+            <p style="text-align: center; padding: 1rem;">Your browser does not support iframes. You can <a href="{{ pdf_url }}" target="_blank" rel="noopener noreferrer">download the PDF file directly</a>.</p>
+        </iframe>
 
     {% else %}
        <p><strong>Configuration Error:</strong> The 'cv_pdf' variable is not set in the front matter of this page. Please specify the path to your CV PDF file (e.g., `cv_pdf: my_cv.pdf`).</p>
