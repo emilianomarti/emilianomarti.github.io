@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: selfish genetic elements | sex chromosomes | genetics of speciation
 
 profile:
   align: right
