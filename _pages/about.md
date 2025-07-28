@@ -29,6 +29,6 @@ latest_posts:
 
 I am an evolutionary geneticist and a PhD candidate in the Ecology, Evolution, Genetics and Genomics (E2G2) program at the University of Rochester. My research focuses on the evolutionary consequences of intragenomic conflicts, particularly how [selfish genetic elements](https://www.cell.com/trends/ecology-evolution/abstract/0169-5347(88)90105-X) (SGEs) can drive the rapid evolution of essential functions, contributing to the origin of hybrid incompatibilities. I use a combination of genetic, genomic, and molecular approaches in Drosophila to understand these fundamental evolutionary processes.
 
-I am co-advised by [Dr. Amanda Larracuente](https://blogs.rochester.edu/larracuente/) and [Dr. Daven Presgraves](https://blogs.rochester.edu/PresgravesLab/).
+I am co-advised by [Dr. Amanda Larracuente](https://larracuentelab.github.io/) and [Dr. Daven Presgraves](https://blogs.rochester.edu/PresgravesLab/).
 
 Before coming to Rochester, I got my masters at the São Paulo State University (UNESP) in Brazil, advised by [Dr. Diogo C. Cabral-De-Mello](https://scholar.google.com.br/citations?user=PQUEjoQAAAAJ), studying the evolution of repetitive DNA in Schistocerca grasshoppers. Previously, I got a BS. in Genetics at the National University of Misiones (UNaM) in Argentina.
