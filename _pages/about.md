@@ -6,7 +6,7 @@ subtitle: selfish genetic elements | sex chromosomes | genetics of speciation
 
 profile:
   align: right
-  image: IMG_4798.png
+  image: profile.png
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>480 Hutchison Hall</p>
